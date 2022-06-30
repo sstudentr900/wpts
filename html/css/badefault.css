@@ -1,0 +1,732 @@
+
+/*body--------------------------------------------------------------------------------------------------------------------*/
+body.overflow {
+    overflow: hidden;
+}
+.btn {
+    display: block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.42857;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    text-decoration: none;
+    color: #666;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    background: #ffffff;
+    border-radius: 0;
+    /* transition: color .5s ease; */
+    border-radius: 3px;
+}
+.btn:hover,
+.btn.active {
+    background-color: #c30e22;
+    border: 1px solid #c30e22;
+    color: #fff;
+}
+/*form--------------------------------------------------------------------------------------------------------------------*/
+form :focus {
+    outline: 1px solid #b4deff;
+}
+
+form label.error {
+    position: absolute;
+    background: red;
+    padding: 0 6px 2px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 12px;
+    bottom: -18px;
+    z-index: 1;
+    left: 0;
+}
+
+form .file .coverLabel {
+    margin-bottom: 0;
+}
+
+form .file .text-muted {
+    color: #6c757d!important;
+    display: block;
+    /*margin-top: .25rem;*/
+    font-size: 80%;
+    font-weight: 400;
+    padding: 0 !important;
+    margin-top: 0;
+}
+
+form .file .imgdiv .imgW {
+    border: 1px solid #ced4da;
+    position: relative;
+    border-radius: 4px;
+    display: inline-block;
+    /* max-height: 150px; */
+}
+
+form .file .imgdiv .imgW img {
+    /*max-height: 65px;*/
+    width: 100%;
+    padding: 5px;
+    max-width: 680px;
+}
+
+form .file .imgdiv .imgW i {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: #fff;
+    border-radius: 50%;
+    /* padding: 3px 5px; */
+    border: 1px solid #ced4da;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    /* line-height: 22px; */
+    padding: 4px;
+}
+
+form .file .imgdiv .imgW i svg {
+    fill: #666;
+}
+
+form .file .coverLabel.active input {
+    /*border: none;*/
+    /*height: 0;*/
+    /*margin: 0;*/
+    /*opacity: 0;*/
+    /*overflow: hidden;*/
+    display: none;
+}
+
+
+/*link*/
+form .link {
+    width: 100%;
+}
+
+form .link .showLink {
+    position: relative;
+    display: none;
+}
+
+form .link .showLink video,
+form .link .showLink iframe {
+    width: 100%;
+    height: 160px;
+}
+
+form .link .showLink i {
+    position: absolute;
+    top: -6px;
+    right: -7px;
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid #ced4da;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 22px;
+    padding: 4px;
+}
+
+form .link .showLink i svg {
+    fill: #666;
+}
+
+form .link.active>input {
+    display: none;
+}
+
+form .link.active .showLink {
+    display: block;
+}
+
+
+
+
+/*ba------------------------------------------------------*/
+.ba {
+    display: flex;
+    min-height: 100vh;
+    background: #eee;
+    flex-wrap: wrap;
+}
+/*baTop*/
+.ba .batop{
+    width: 100%;
+    /* background: #262626; */
+    background: #fff;
+    display: flex;
+    padding: 15px 20px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 14%);
+    height: 73px;
+}
+.ba .batop .logo{
+    width: 135px;
+}
+.ba .batop ul{
+    display: flex;
+}
+.ba .batop ul a{
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #888;
+}
+.ba .batop ul a svg{
+    fill: #888;
+}
+.ba .batop ul a:hover{
+    color: #c30e22;
+}
+.ba .batop ul a:hover svg{
+    fill: #c30e22;
+}
+.ba .batop ul i{
+    width: 14px;
+    font-size: 0;
+    margin-right: 5px;
+}
+/*baleft*/
+.ba .baleft {
+    /* background: #fff; */
+    background: #262626;
+    /* width: 260px; */
+    flex: 0 0 220px;
+    /* overflow: hidden; */
+    padding: 20px 15px;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 14%);
+    /* background-position: center; */
+    /* transition: width .3s; */
+    /* overflow: hidden; */
+    min-height: calc(100vh - 73px);
+}
+/*logo*/
+.ba .baleft .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #585858;
+    justify-content: center;
+}
+
+.ba .baleft .logo a {
+    width: 160px;
+    margin: 0 0 15px;
+}
+
+.ba .baleft .logo svg {
+    fill: #c30e22;
+}
+/*li*/
+.ba .baleft li {
+    cursor: pointer;
+    font-size: 0;
+}
+.ba .baleft li+li{
+    margin-top: 2px;
+}
+
+.ba .baleft li a {
+    /* font-size: 1.125rem; */
+    position: relative;
+    /*padding: 15px;*/
+    padding: 12px 12px;
+    color: #d2d2d2;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.ba .baleft li a:hover {
+    background-color: rgba(200, 200, 200, 0.2);
+    color: #fff;
+    /* background-color: #f0f0f0; */
+}
+
+.ba .baleft li a:hover svg{
+    fill: #fff;
+}
+
+.ba .baleft li i {
+    width: 16px;
+    font-size: 0;
+}
+
+.ba .baleft li svg {
+    fill: #d2d2d2;
+    /* fill: #444; */
+}
+
+.ba .baleft li a.active {
+    background-color: #c30e22;
+    color: #fff;
+    /* box-shadow: 0 14px 26px -12px rgba(100, 100, 100, 0.42), 0 4px 23px 0px rgba(100, 100, 100, 0.12), 0 8px 10px -5px rgba(100, 100, 100, 0.2); */
+}
+
+.ba .baleft li a.active p {
+    color: inherit;
+}
+
+.ba .baleft li a.active svg {
+    fill: #fff;
+}
+
+.ba .baleft li a p {
+    font-size: 14px;
+    margin-left: 6px;
+    line-height: initial;
+    /* height: 24px; */
+    /* color: #444; */
+    /* width: 140px;
+    overflow: hidden; */
+    color: inherit;
+}
+
+
+/*right*/
+.ba .baright {
+    /* width: 100%; */
+    flex: 1 1;
+    padding: 30px;
+    overflow: hidden;
+}
+
+/*BaAllProducts*/
+.ba .BaAllProducts {
+    width: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    border-radius: 3px;
+    background: #fff;
+    /* transform: translateY(10px);
+    opacity: 0;
+    transition: .8s ease-out; */
+}
+
+.ba .BaAllProducts+.BaAllProducts {
+    margin-top: 30px;
+}
+
+/* .ba .BaAllProducts.active {
+    transform: translateY(0);
+    opacity: 1;
+} */
+
+
+/*ProductsNav*/
+
+.ProductsNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.ProductsNav .title {
+    /* background: #c30e22; */
+    /* padding: 20px 60px; */
+    /* padding: 20px; */
+    /* border-radius: 3px; */
+    /* color: #fff; */
+    /* font-size: 18px; */
+    font-size: 22px;
+    font-weight: 500;
+    /* box-shadow: 0 14px 26px -12px rgb(199 163 40 / 42%), 0 4px 23px 0px rgb(177 150 19 / 12%), 0 8px 10px -5px rgb(228 198 22 / 20%); */
+    /* box-shadow: 0 14px 26px -12px rgb(111 111 111 / 42%), 0 4px 23px 0px rgb(105 105 105 / 12%), 0 8px 10px -5px rgb(132 132 132 / 20%); */
+    /* margin-top: -40px; */
+}
+
+/* .ProductsNav .title h4 {
+    font-weight: 100;
+} */
+
+.ProductsNav .ProductsAdd {
+    display: flex;
+}
+
+.ProductsNav .ProductsAdd .btn {
+    /*border-radius: 30px;*/
+    padding: 8px 15px;
+    /*width: 120px;*/
+    border: none;
+    font-size: 14px;
+    /*border: none;*/
+    /*background-color: #eee;*/
+    /*background-color: #262626;*/
+    /*color: #fff;*/
+    display: flex;
+    align-items: baseline;
+    /* transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1); */
+    /*box-shadow: 0 2px 2px 0 rgba(100, 100, 100, 0.14),*/
+    /*0 3px 1px -2px rgba(100, 100, 100, 0.2),*/
+    /*0 1px 5px 0 rgba(100, 100, 100, 0.12);*/
+    /* border: 1px solid #ccc; */
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid #c30e22;
+    box-shadow: 0 14px 26px -12px rgba(100, 100, 100, 0.42), 0 4px 23px 0px rgba(100, 100, 100, 0.12), 0 8px 10px -5px rgba(100, 100, 100, 0.2);
+    color: #fff;
+    background: #c30e22;
+}
+
+.ProductsNav .ProductsAdd .btn i {
+    width: 13px;
+    margin-right: 5px;
+    font-size: 0;
+}
+
+.ProductsNav .ProductsAdd .btn i svg {
+    /* fill: #666; */
+    fill: #fff;
+}
+
+.ProductsNav .ProductsAdd .btn:focus {
+    outline: none;
+}
+
+.ProductsNav .ProductsAdd .btn+.btn {
+    margin-left: 10px;
+}
+
+.ProductsNav .ProductsAdd .btn:hover {
+    border: 1px solid #c30e22;
+    box-shadow: 0 14px 26px -12px rgba(100, 100, 100, 0.42), 0 4px 23px 0px rgba(100, 100, 100, 0.12), 0 8px 10px -5px rgba(100, 100, 100, 0.2);
+    color: #fff;
+    background: #c30e22;
+}
+
+.ProductsNav .ProductsAdd .btn:hover i svg {
+    fill: #fff;
+}
+
+
+/*ProductsContent*/
+
+.ProductsContent {
+    padding: 40px;
+}
+
+
+/*名稱*/
+
+.ProductsContent ul.header li p {
+    font-size: 16px;
+}
+
+.ProductsContent ul.header li:nth-child(2) {
+    text-align: center;
+    display: none;
+    padding: 260px 0;
+    font-size: 18px;
+}
+
+
+/*排序*/
+
+.ProductsContent .header .porderBtns {
+    margin-left: 4px;
+    margin-right: 4px;
+    position: relative;
+}
+
+.ProductsContent .header .porderBtns b {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    opacity: 0.4;
+}
+
+.ProductsContent .header .porderBtns b:first-child {
+    bottom: 1px;
+}
+
+.ProductsContent .header .porderBtns b+b {
+    border-bottom: 0;
+    border-top: 4px dashed;
+    top: 1px;
+}
+
+
+/*內容*/
+.ProductsContent ul p {
+    word-break: break-all;
+    font-size: 14px;
+    color: #444;
+}
+
+.ProductsContent ul p.red {
+    color: red;
+}
+.ProductsContent ul{
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+.ProductsContent ul li {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    list-style: none;
+    justify-content: space-between;
+}
+.ProductsContent ul li:first-child{
+    background-color: #f0f0f0;
+}
+
+.ProductsContent ul li>div:last-child {
+    padding: 15px 10px;
+    justify-content: flex-end;
+}
+
+.ProductsContent ul li>div {
+    /* width: 20%; */
+    flex: 1 1;
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.ProductsContent ul li>div.bashowNo{
+    display: none;
+} 
+
+.ProductsContent ul li>div img {
+    /* width: 60%; */
+    height: auto;
+    max-width: 100px;
+}
+
+
+/*動作*/
+/* .ProductsContent li:nth-child(2) button:last-child{
+    display: none;
+} */
+.ProductsContent button {
+    border: none;
+    padding: 10px 6px;
+    font-size: 0;
+    background: none;
+    color: #666666;
+    cursor: pointer;
+    width: 30px;
+}
+.ProductsContent button svg {
+    fill: #666;
+}
+.ProductsContent button:hover svg{
+    fill: #c30e22;
+}
+.ProductsContent button:focus {
+    outline: none;
+}
+.ProductsContent ul li>div:first-child {
+    flex: 0 0 60px;
+}
+.ProductsContent ul li>div:last-child {
+    flex: 0 0 100px;
+}
+
+/*頁碼--------------------------------------------------------------------------------------------------------------------*/
+.ProductsPage {
+    text-align: center;
+    padding: 0 40px 30px;
+    margin-top: -20px;
+}
+.ProductsPage li {
+    padding: 0;
+    margin: 0 3px;
+}
+.ProductsPage li a {
+    padding: 0px 11px;
+    min-width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #666;
+}
+.ProductsPage ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ProductsPage li a.previous,
+.ProductsPage li a.next {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eee;
+    border-radius: 60px;
+    min-width: 40px;
+    height: 40px;
+}
+.ProductsPage li a.previous::after,
+.ProductsPage li a.next::after {
+    position: absolute;
+    content: '';
+    border: 2px solid #888;
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+    border-top: none;
+    border-right: none;
+    left: 18px;
+}
+.ProductsPage li a.next::after {
+    transform: rotate(-135deg);
+    left: 15px;
+}
+.ProductsPage li a.previous:hover,
+.ProductsPage li a.next:hover {
+    background: #c30e22;
+}
+.ProductsPage li a.previous:hover:after,
+.ProductsPage li a.next:hover:after {
+    border-color: #fff;
+}
+.ProductsPage+.ProductsNav {
+    margin-top: 20px;
+}
+
+/*puplicPasswordEye*/
+.puplicPasswordEye{
+    position: absolute;
+    right: 12px;
+    top: 13px;
+    cursor: pointer;
+}
+.puplicPasswordEye svg{
+    fill: #777;
+}
+.puplicPasswordEye.active svg:nth-child(1),
+.puplicPasswordEye svg:nth-child(2){
+    display: none;
+}
+.puplicPasswordEye.active svg:nth-child(2){
+    display: block;
+}
+
+/*balogin--------------------------------------------------------------------*/
+.balogin {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/baimg/baloginbg.jpg");
+    background-size: cover;
+    color: #444444;
+}
+.balogin form {
+    width: 450px;
+    padding: 50px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, .6);
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, .6);
+}
+.balogin .top .title{
+    padding-top: 0;
+    padding-bottom: 40px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 500;
+    color: #777;
+}
+.balogin .top  i{
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+}
+.balogin .top  i svg{
+    fill: #777;
+    width: 30px;
+    height: auto;
+}
+.balogin li {
+    padding-bottom: 20px;
+    position: relative;
+}
+.balogin .linkBtn {
+    margin: 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.balogin .btn {
+    width: 120px;
+}
+.balogin li input[type="text"],
+.balogin li input[type="password"]{
+    background: #fff;
+    border: 1px solid #aaa;
+    height: 50px;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+/*template_textarea--------------------------------------------------*/
+/* .template_textarea .ProductsContent{
+    padding: 40px;
+}
+.template_textarea .ProductsContent textarea{
+    min-height: 600px;
+} */
+.ProductsContent.textarea{
+    padding: 40px;
+}
+.ProductsContent.textarea textarea{
+    min-height: 600px;
+}
+/*bamanager-----------------------------------------------------*/
+.bamanager .ProductsContent ul li>div:nth-child(2) {
+    flex: 0 0 120px;
+}
+.bamanager .ProductsContent ul li>div:nth-child(2) img {
+    max-width: 50px;
+}
+.bamanager .ProductsContent ul li>div:nth-child(6) {
+    flex: 0 0 60px;
+}
+.bamanager .ProductsContent ul li>div:nth-child(7) {
+    flex: 0 0 110px;
+}
+.bamanager+.overlaymodal form .file .imgdiv .imgW{
+    max-width: 110px;
+}
+/*bahome-----------------------------------------------------*/
+.bahome .ProductsContent ul li>div:nth-child(2) {
+    flex: 0 0 160px;
+}
+.bahome .ProductsContent ul li>div:nth-child(2) img {
+    max-width: 110px;
+}
+.bahome .ProductsContent ul li>div:nth-child(5){
+    flex: 0 0 60px;
+}
+.bahome+.overlaymodal .myForm .imgDiv.active .img{
+    max-width: 340px;
+}

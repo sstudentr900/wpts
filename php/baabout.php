@@ -1,0 +1,10 @@
+<?php
+if(FN::is_method('seach')){
+    FN::common_seach(1);
+    exit();
+}
+if(FN::is_method('edit_tinymce')){
+    FN::common_edit(1);
+    exit();
+}
+include('html/component/baTemplate.php');
