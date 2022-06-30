@@ -36,7 +36,7 @@ $obj['tables']=array(
     array('n'=>'動作','i'=>'control')
 );
 $obj['data'] = $_POST;
-if(FN::is_method('seach')){
+if(CustomFn::is_method('seach')){
     $condition= "";
     $order_by='';
     $fields='account,image,name,phone,id,is_release';
@@ -65,18 +65,18 @@ if(FN::is_method('seach')){
                         'content_table'=>true,
                     ),
                 ),
-                'customText'=>FN::customText(),
+                'customText'=>CustomFn::customText(),
             )
         );
     }else{
-        echo json_encode(array('result'=>false,'message'=>FN::customText()['message_notfind'],'customText'=>FN::customText()));
+        echo json_encode(array('result'=>false,'message'=>CustomFn::customText()['message_notfind'],'customText'=>CustomFn::customText()));
     }
     exit();
 }
 if(isset($_GET['account_add'])){
     $obj['value'] = $_GET['account_add'];
     $obj['method'] = 'add';
-    if(FN::ch_check_email($obj)){
+    if(CustomFn::ch_check_email($obj)){
         echo 'true';
     }else{
         echo 'false';
@@ -86,18 +86,18 @@ if(isset($_GET['account_add'])){
 if(isset($_GET['account_modify'])){
     $obj['value'] = $_GET['account_modify'];
     $obj['method'] = 'modify';
-    if(FN::ch_check_email($obj)){
+    if(CustomFn::ch_check_email($obj)){
         echo 'true';
     }else{
         echo 'false';
     }
     exit();
 }//修改驗證除了自己有無重複帳號
-if(FN::is_method('add')){
+if(CustomFn::is_method('add')){
 // if(isset($_POST['add'])){
     // $passwrd = md5('@#mj'.$_POST['password'].'app!');
     // $data_array = array(
-    //     "image" =>FN::imgAdd($obj['dataName'],$_POST['image']),
+    //     "image" =>CustomFn::imgAdd($obj['dataName'],$_POST['image']),
     //     'account' => $_POST['account'],
     //     'password' => $passwrd,
     //     'name' => $_POST['name'],
@@ -113,19 +113,19 @@ if(FN::is_method('add')){
 
 
     $obj['method'] = 'add';
-    $data_array = FN::ch_from($obj);
+    $data_array = CustomFn::ch_from($obj);
     Database::get()->insert2($obj['dataName'], $data_array);
     echo json_encode(array('result'=>true));
     exit();
 }
-if(FN::is_method('modify')){
+if(CustomFn::is_method('modify')){
 // if(isset($_POST['modify'])){
     // $condition = "id = :id";
     // $order_by='';
     // $fields='image';
     // $limit="";
     // $data_array = array("id" => $_POST['id']);
-    // FN::imgEdite($obj['dataName'],$_POST['id'], $_POST['image']);
+    // CustomFn::imgEdite($obj['dataName'],$_POST['id'], $_POST['image']);
     // $data_array = array(
     //     "name" => $_POST['name'],
     //     "is_release" => $_POST['is_release'],
@@ -134,24 +134,24 @@ if(FN::is_method('modify')){
     // echo json_encode(array('result'=>true));
 
     $obj['method'] = 'modify';
-    $data_array = FN::ch_from($obj);
+    $data_array = CustomFn::ch_from($obj);
     Database::get()->update2($obj['dataName'],$data_array,'id',$_POST['id']);
     echo json_encode(array('result'=>true));
     exit();
 }
-if(FN::is_method('modify_password')){
+if(CustomFn::is_method('modify_password')){
 // if(isset($_POST['modify_password'])){
     // $passwrd = md5('@#mj'.$_POST['password'].'app!');
     // $data_array = array("password" => $passwrd);
     // $row = Database::get()->update2($obj['dataName'],$data_array,'id',$_POST['id']);
     // echo json_encode(array('result'=>true));
 
-    $data_array = FN::ch_from($obj);
+    $data_array = CustomFn::ch_from($obj);
     Database::get()->update2($obj['dataName'],$data_array,'id',$_POST['id']);
     echo json_encode(array('result'=>true));
     exit();
 }
-if(FN::is_method('delete')){
+if(CustomFn::is_method('delete')){
 // if(isset($_POST['delete'])){
     // $condition= "id=:id";
     // $order_by='';
@@ -160,9 +160,9 @@ if(FN::is_method('delete')){
     // $data_array= array('id'=>$_POST['id']);
     // $image = Database::get()->query2($obj['dataName'],$condition,$order_by,$fields,$limit,$data_array);
     // if($image[0]['image']){
-    //     FN::imgDelet($image[0]['image']);
+    //     CustomFn::imgDelet($image[0]['image']);
     // }
-    FN::ch_image_delet($obj);
+    CustomFn::ch_image_delet($obj);
     Database::get()->delete2($obj['dataName'],'id',$_POST['id']);
     echo json_encode(array('result'=>true));
     exit();

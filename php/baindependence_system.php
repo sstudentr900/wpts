@@ -1,10 +1,10 @@
 <?php
-if(FN::is_method('seach')){
-    FN::common_seach(7);
+if(CustomFn::is_method('seach')){
+    CustomFn::common_seach(7);
     exit();
 }
-if(FN::is_method('edit_tinymce')){
-    FN::common_edit(7);
+if(CustomFn::is_method('edit_tinymce')){
+    CustomFn::common_edit(7);
     exit();
 }
 include('html/component/baTemplate.php');

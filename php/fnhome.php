@@ -1,5 +1,5 @@
 <?php
-if(FN::is_method('seach')){
+if(CustomFn::is_method('seach')){
     //輪播圖
     $dataName="silde";
     $condition= "is_Release='Y'";

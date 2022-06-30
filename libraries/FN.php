@@ -1,5 +1,5 @@
 <?php
-class FN
+class CustomFn
 {
     //valu
     static function ch_value($data){
@@ -114,7 +114,7 @@ class FN
         }
     }
     static function ch_image_add($data){
-        if(FN::ch_required($data)){
+        if(CustomFn::ch_required($data)){
             $imgName = $data['dataName'].time().'.jpg';
             // print_r($imgName);
             $path = 'html/img/baimg/'.$imgName;//圖片路徑
@@ -171,12 +171,12 @@ class FN
             foreach ($data['tables'] as $table) {
                 //
                 if($data_key == $table['i'] && !empty($table['rules'])){
-                    $data['value'] = FN::ch_value($data_value);
+                    $data['value'] = CustomFn::ch_value($data_value);
                     //rules
                     foreach($table['rules'] as $rules_key => $rules_value){
                         $data[$rules_key] = $rules_value; //maxlength
                         if($data_key=='image'){
-                            if(FN::ch_required($data)){
+                            if(CustomFn::ch_required($data)){
                                 $array_ok[$data_key] = true;
                             }else{
                                 $array_error[$data_key] =  $table['messages'][$rules_key];
@@ -185,7 +185,7 @@ class FN
                         }
                         if($data_key!='image'){
                             $fnName = 'ch_'.$rules_key;
-                            $return = FN::$fnName($data);
+                            $return = CustomFn::$fnName($data);
                             if($return){
                                 $array_ok[$data_key] = $data['value'];
                             }else{
@@ -205,7 +205,7 @@ class FN
                 $fnName = 'ch_image_'. $data['method'];
                 // print_r($fnName);
                 // exit;
-                $array_ok['image'] = FN::$fnName($data);
+                $array_ok['image'] = CustomFn::$fnName($data);
             }
             // exit;
             return $array_ok;
@@ -313,20 +313,20 @@ class FN
                             'id'=>'tinymce'
                         )
                     ),
-                    'customText'=>FN::customText(),
+                    'customText'=>CustomFn::customText(),
                 )
             );
         }else{
-            echo json_encode(array('result'=>false,'message'=>'找不到相關資料','customText'=>FN::customText()));
+            echo json_encode(array('result'=>false,'message'=>'找不到相關資料','customText'=>CustomFn::customText()));
         }
     }
     static function common_edit($id){
         $data_array = array("tinymce" => $_POST['tinymce']);
         $row = Database::get()->update2('common',$data_array,'id',$id);
         if(!empty($row)){
-            echo json_encode(array('result'=>false,'message'=>'儲存成功','customText'=>FN::customText()));
+            echo json_encode(array('result'=>false,'message'=>'儲存成功','customText'=>CustomFn::customText()));
         }else{
-            echo json_encode(array('result'=>false,'message'=>'儲存失敗，請重新儲存','customText'=>FN::customText()));
+            echo json_encode(array('result'=>false,'message'=>'儲存失敗，請重新儲存','customText'=>CustomFn::customText()));
         }
     }
     static function common_seach_fn($id){
@@ -348,12 +348,12 @@ class FN
             //                 'id'=>'tinymce'
             //             )
             //         ),
-            //         'customText'=>FN::customText(),
+            //         'customText'=>CustomFn::customText(),
             //     )
             // );
             echo json_encode(array('result'=>true,'tinymce'=>$row));
         }else{
-            echo json_encode(array('result'=>false,'message'=>'找不到相關資料','customText'=>FN::customText()));
+            echo json_encode(array('result'=>false,'message'=>'找不到相關資料','customText'=>CustomFn::customText()));
         }
     }
     //img
@@ -374,7 +374,7 @@ class FN
         $path = Database::get()->query2($dataName,$condition,$order_by,$fields,$limit,$data_array);
 
         // if(empty($path[0]['Image'])){ //值為空
-        //     $data_array = array("Image" =>FN::imgAdd($dataName,$img));
+        //     $data_array = array("Image" =>CustomFn::imgAdd($dataName,$img));
         //     Database::get()->update2($dataName,$data_array,'id',$id);
         //     return;
         // }

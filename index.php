@@ -3,7 +3,7 @@
     // echo "11";
     // exit();
     require( __DIR__ .'/config.php');
-    $getA= FN::ch_value($_GET['a']);
+    $getA= CustomFn::ch_value($_GET['a']);
     if (!empty($getA) && is_file(__DIR__ . "/php/" . $getA . ".php") == true ){
 
         if(preg_match("/^balogout$/", $getA)){
@@ -37,7 +37,7 @@
             include( 'php/'.$getA.'.php');
             exit();
         }
-        if(preg_match("/^ba/", $getA) && FN::get_session('baMemberID')){
+        if(preg_match("/^ba/", $getA) && CustomFn::get_session('baMemberID')){
             //後台
             include( 'php/'.$getA.'.php' );
             exit();

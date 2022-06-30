@@ -6,8 +6,8 @@ $error = '';
 // if (isset($_POST) && !empty($_POST)){
 if(isset($_POST['account'])){    
     $error = array();
-    $account = FN::ch_value($_POST['account']);
-    $password = FN::ch_value($_POST['password']);
+    $account = CustomFn::ch_value($_POST['account']);
+    $password = CustomFn::ch_value($_POST['password']);
 
     //帳號
     if (empty($account)) {
@@ -35,7 +35,7 @@ if(isset($_POST['account'])){
         $row = Database::get()->getTotle();
         if($row){
             // $_SESSION['baMemberID']= $manager[0]['id'];
-            FN::set_session('baMemberID',$manager[0]['id']);
+            CustomFn::set_session('baMemberID',$manager[0]['id']);
             header("Location: ?a=bamanager");
             exit();
         }else{

@@ -26,7 +26,7 @@ $obj['tables']=array(
 );
 $obj['data'] = $_POST;
 
-if(FN::is_method('seach')){
+if(CustomFn::is_method('seach')){
     $pn = 4;
     $condition= "";
     $order_by='';
@@ -94,17 +94,17 @@ if(FN::is_method('seach')){
                         'id'=>'tinymce'
                     )
                 ),
-                'customText'=>FN::customText(),
+                'customText'=>CustomFn::customText(),
             )
         );
     }else{
-        echo json_encode(array('result'=>false,'message'=>FN::customText()['message_notfind'],'customText'=>FN::customText()));
+        echo json_encode(array('result'=>false,'message'=>CustomFn::customText()['message_notfind'],'customText'=>CustomFn::customText()));
     }
     exit();
 }
-if(FN::is_method('add')){
+if(CustomFn::is_method('add')){
     // $data_array = array(
-    //     "image" =>FN::imgAdd('silde',$_POST['image']),
+    //     "image" =>CustomFn::imgAdd('silde',$_POST['image']),
     //     'is_release' => $_POST['is_release'],
     //     'src' => $_POST['src'],
     //     'title' => $_POST['title'],
@@ -115,13 +115,13 @@ if(FN::is_method('add')){
     // exit();
 
     $obj['method'] = 'add';
-    $data_array = FN::ch_from($obj);
+    $data_array = CustomFn::ch_from($obj);
     Database::get()->insert2($obj['dataName'], $data_array);
     echo json_encode(array('result'=>true));
     exit();
 }
-if(FN::is_method('modify')){
-    // FN::imgEdite('silde',$_POST['id'], $_POST['image']);
+if(CustomFn::is_method('modify')){
+    // CustomFn::imgEdite('silde',$_POST['id'], $_POST['image']);
     // $data_array = array(
     //     'is_release' => $_POST['is_release'],
     //     'src' => $_POST['src'],
@@ -132,20 +132,20 @@ if(FN::is_method('modify')){
     // exit();
 
     $obj['method'] = 'modify';
-    $data_array = FN::ch_from($obj);
+    $data_array = CustomFn::ch_from($obj);
     // print_r($data_array);
     // exit();
     Database::get()->update2($obj['dataName'],$data_array,'id',$_POST['id']);
     echo json_encode(array('result'=>true));
     exit();
 }
-if(FN::is_method('edit_tinymce')){
+if(CustomFn::is_method('edit_tinymce')){
 // if(isset($_POST['edit_tinymce'])){
     //首頁內容
-    echo FN::common_edit(17);
+    echo CustomFn::common_edit(17);
     exit();
 }
-if(FN::is_method('delete')){
+if(CustomFn::is_method('delete')){
     // $obj['dataName']= 'silde';
     // $condition= "id=:id";
     // $order_by='';
@@ -154,14 +154,14 @@ if(FN::is_method('delete')){
     // $data_array= array('id'=>$_POST['id']);
     // $image = Database::get()->query2($obj['dataName'],$condition,$order_by,$fields,$limit,$data_array);
     // if($image[0]['image']){
-    //     FN::imgDelet($image[0]['image']);
+    //     CustomFn::imgDelet($image[0]['image']);
     // }
 
     // Database::get()->delete2($obj['dataName'],'id',$_POST['id']);
     // echo json_encode(array('result'=>true));
     // exit();
 
-    FN::ch_image_delet($obj);
+    CustomFn::ch_image_delet($obj);
     Database::get()->delete2($obj['dataName'],'id',$_POST['id']);
     echo json_encode(array('result'=>true));
     exit();

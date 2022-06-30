@@ -28,16 +28,16 @@ $obj['tables']=array(
     ),
 );
 $obj['data'] = $_POST;
-if(FN::is_method('seach')){
+if(CustomFn::is_method('seach')){
     echo json_encode(
         array('result'=>true,
             'tables'=>$obj['tables'],
-            'customText'=>FN::customText(),
+            'customText'=>CustomFn::customText(),
         )
     );
     exit();
 }
-// if(FN::is_method('add')){
+// if(CustomFn::is_method('add')){
 //     $mail = new Mail($obj['data']['email'],$obj['data']['name'],$obj['data']['subject'],$obj['data']['message']);
 //     echo json_encode($mail->send());
 //     exit();

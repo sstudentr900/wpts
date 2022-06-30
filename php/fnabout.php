@@ -1,6 +1,6 @@
 <?php
-if(FN::is_method('seach')){
-    FN::common_seach_fn(1);
+if(CustomFn::is_method('seach')){
+    CustomFn::common_seach_fn(1);
     // $dataName="common";
     // $condition= "id=1";
     // $order_by='';
