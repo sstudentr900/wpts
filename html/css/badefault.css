@@ -159,6 +159,9 @@ form .link.active .showLink {
     background: #eee;
     flex-wrap: wrap;
 }
+.ba  #mceu_2 button{
+    width: 85px;
+}
 /*baTop*/
 .ba .batop{
     width: 100%;
@@ -172,7 +175,7 @@ form .link.active .showLink {
     height: 73px;
 }
 .ba .batop .logo{
-    width: 135px;
+    width: 120px;
 }
 .ba .batop ul{
     display: flex;

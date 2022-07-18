@@ -19,16 +19,15 @@ ini_set("session.gc_maxlifetime", 14400);
 
 
 // 資料庫
-// const MYSQL_HOST="10.1.6.71";
-// const MYSQL_USERNAME="root";
-// const MYSQL_PASSWORD="sly-ha-123";
-// const MYSQL_DBNAME="MJAPP_wpts";
+const MYSQL_HOST="localhost";
+const MYSQL_USERNAME="root";
+const MYSQL_PASSWORD="";
+const MYSQL_DBNAME="MJAPP_wpts";
 
-// CLEARDB_DATABASE_URL: mysql://bcdf7221b560fc:300c7ca6@us-cdbr-east-06.cleardb.net/heroku_41187acf33f3f6e?reconnect=true
-const MYSQL_HOST="us-cdbr-east-06.cleardb.net";
-const MYSQL_USERNAME="bcdf7221b560fc";
-const MYSQL_PASSWORD="300c7ca6";
-const MYSQL_DBNAME="heroku_41187acf33f3f6e";
+// const MYSQL_HOST="us-cdbr-east-06.cleardb.net";
+// const MYSQL_USERNAME="bcdf7221b560fc";
+// const MYSQL_PASSWORD="300c7ca6";
+// const MYSQL_DBNAME="heroku_41187acf33f3f6e";
 
 
 

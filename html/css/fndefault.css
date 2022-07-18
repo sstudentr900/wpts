@@ -26,8 +26,8 @@ p{
     background: #fff;
 }
 .publicMenu .logo{
-    width: 180px;
-    margin-left: 15px;
+    width: 120px;
+    margin-left: 0;
 }
 .publicMenu .logo svg{
     width: 100px;
@@ -128,10 +128,10 @@ p{
     .publicMenu{
         height: 70px;
     }
-    .publicMenu .logo{
+    /* .publicMenu .logo{
         width: 140px;
         margin-left: 10px;
-    }
+    } */
     .publicMenu .menu ul{
         position: absolute;
         top: 70px;
@@ -267,7 +267,7 @@ p{
 }
 .publicFooter .top .contact .logo{
     /* margin-bottom: 20px; */
-    width: 230px;
+    width: 120px;
     margin-bottom: 10px;
 }
 .publicFooter .top .contact .text{

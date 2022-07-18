@@ -16,7 +16,7 @@
         <div class="fn">
             <div class="publicLoad active"><div></div></div>
             <div class="publicMenu">
-                <a href="/" class="logo">
+                <a href="./" class="logo">
                     <img src="./html/img/logo.png" alt="">
                 </a>
                 <div class="menu">
